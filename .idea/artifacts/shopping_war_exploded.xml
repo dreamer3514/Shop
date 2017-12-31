@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="shopping:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/shopping_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="shopping" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-4.3.12.RELEASE" />
+          <element id="library" level="project" name="Spring MVC-4.3.12.RELEASE" />
+          <element id="file-copy" path="F:/BaiduYunDownload/commons-pool2-2.4.2.jar" />
+          <element id="file-copy" path="F:/BaiduYunDownload/commons-dbcp2-2.1.1.jar" />
+          <element id="file-copy" path="F:/BaiduYunDownload/commons-collections4-4.1.jar" />
+          <element id="file-copy" path="F:/BaiduYunDownload/mysql-connector-java-5.1.39-bin.jar" />
+          <element id="file-copy" path="F:/BaiduYunDownload/javax.servlet.jsp.jstl-1.2.2.jar" />
+          <element id="library" level="project" name="lib" />
+          <element id="file-copy" path="F:/BaiduYunDownload/27778d8fad0616062b45ce45500f210f/standard-1.1.2.jar" />
+          <element id="file-copy" path="F:/BaiduYunDownload/27778d8fad0616062b45ce45500f210f/jstl-1.1.2.jar" />
+          <element id="file-copy" path="F:/BaiduYunDownload/junit-4.9.jar" />
+          <element id="file-copy" path="F:/BaiduYunDownload/json-lib-2.4-jdk15.jar" />
+          <element id="file-copy" path="F:/BaiduYunDownload/commons-collections4-4.1-bin/commons-collections4-4.1/commons-collections4-4.1.jar" />
+          <element id="file-copy" path="F:/BaiduYunDownload/commons-logging-1.2.jar" />
+          <element id="file-copy" path="F:/BaiduYunDownload/testng-6.8.8.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="shopping/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -77,9 +77,8 @@
     <div class="am-cf"></div>
     <div class="am-slider am-slider-default index-lunbo" data-am-flexslider="{playAfterPaused: 8000}">
             <ul class="am-slides">
-                <li><img src="images/index_banner.jpg" /></li>
-                <li><img src="images/index_banner.jpg" /></li>
-                <li><img src="images/index_banner.jpg" /></li>
+                <li><img src="images/index_banner1.jpg" /></li>
+                <li><img src="images/index_banner2.jpg" /></li>
             </ul>
 
         <div class="banner-slide am-hide-md-down">

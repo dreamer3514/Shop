@@ -84,4 +84,22 @@ public class ProductController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/addNewProduct")
+    public void addNewProduct(Product product)
+    {
+        productService.addNewProduct(product);
+    }
+
+    @RequestMapping(value = "/delete.html")
+    public void  delete(int productId)
+    {
+        productService.delete(productId);
+    }
+
+    @RequestMapping(value = "/update.html")
+    public void update(Product product)
+    {
+        productService.update(product);
+    }
+
 }

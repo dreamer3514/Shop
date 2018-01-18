@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                          http://www.springframework.org/schema/beans/spring-beans.xsd
+                          http://www.springframework.org/schema/context
+                          http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com"/>
+    <context:component-scan base-package="test"/>
+
+    <bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer"
+          p:location="classpath:com/config/jdbc.properties"
+          p:fileEncoding="utf-8"
+    />
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+            destroy-method="close"
+          p:driverClassName="com.mysql.jdbc.Driver"
+          p:url="jdbc:mysql://localhost:3306/shopping_db"
+          p:username="root"
+          p:password=""
+    />
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
+          p:dataSource-ref="dataSource"
+    />
+
+
+</beans>

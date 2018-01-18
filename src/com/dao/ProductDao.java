@@ -158,7 +158,7 @@ public class ProductDao {
         return list;
     }
 
-    public void delect(int productId)
+    public void delete(int productId)
     {
        String sql = "DELETE FROM t_products where product_id=?";
        jdbcTemplate.update(sql,new Object[]{productId});

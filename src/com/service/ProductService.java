@@ -55,6 +55,18 @@ public class ProductService {
         productPage.setList(list.subList(start,end));
         return productPage;
     }
+    public void addNewProduct(Product product)
+    {
+        productDao.intset(product);
+    }
+    public void delete(int productId)
+    {
+        productDao.delete(productId);
+    }
+    public void update(Product product)
+    {
+        productDao.upDate(product);
+    }
     public Page<Product> getAll(int page)
     {
         List<Product> list = productDao.getAll(defaultOrder);
@@ -80,6 +92,7 @@ public class ProductService {
         List<Product> list= productDao.getProductsBySuperTypeId(superTypeId);
         return setPage(list,page);
     }
+
 
     //按名称排序
     public Page<Product> getProductsByKeyWordOrderByName(String keyWord,int page)

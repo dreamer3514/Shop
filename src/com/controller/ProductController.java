@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -85,8 +86,9 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/addNewProduct")
-    public void addNewProduct(Product product)
+    public void addNewProduct(Product product,HttpServletRequest request)
     {
+        product.setDate(new Date());
         productService.addNewProduct(product);
     }
 

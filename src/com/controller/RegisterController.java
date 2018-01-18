@@ -18,7 +18,6 @@ public class RegisterController {
     @Autowired
     private HttpServletRequest request;
 
-
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
@@ -33,20 +32,10 @@ public class RegisterController {
 
     //注册新用户并登录
     @RequestMapping(value="doRegister.html")
-    public ModelAndView doRegister()
+    public ModelAndView doRegister(User user,HttpServletRequest request)
     {
-        User user = new User();
-        user.setUserName(request.getParameter("userName"));
-
-        user.setPassword(request.getParameter("password"));
-        user.setEmailAdress(request.getParameter("email"));
-
-        System.out.println(request.getParameter("userName"));
-        System.out.println(request.getParameter("password"));
-        System.out.println(request.getParameter("email"));
         user.setSex(1);
         user.setCredit(100);
-
 
        if(user.getUserName()!=null||user.getPassword()!=null)
        {

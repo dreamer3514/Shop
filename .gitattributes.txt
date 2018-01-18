@@ -1,1 +1,1 @@
-.js linguist-languages=java
+.js linguist-languages=Java

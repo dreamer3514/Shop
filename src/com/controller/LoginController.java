@@ -46,20 +46,29 @@ public class LoginController {
             return new ModelAndView("login","error","用户名或密码不能为空");
         }else {
 
-        }
-            boolean isValidUser = userService.hasMatchUser(userName,password);
-            if(!isValidUser)
-            {
-                return new ModelAndView("login","error","用户名或密码错误");
-            }else {
-                User user = userService.findUserByName(userName);
-                user.setLastIp(request.getLocalAddr());
-                user.setLastVisit(new Date());
-                // System.out.println("匹配成功");
-                userService.loginSuccess(user);
-                request.getSession().setAttribute("user",user);
-                 System.out.println("完成方法");
-                return new ModelAndView("welcome");
+            boolean isValidUser = userService.hasMatchUser(userName, password);
+            if (!isValidUser) {
+                return new ModelAndView("login", "error", "用户名或密码错误");
+            } else {
+                if (userName.equals("fmd") && password.equals("123"))
+                {
+                    System.out.println("管理员");
+                    return new ModelAndView("manage");
+
+                } else {
+                    System.out.println("非管理员");
+                    User user = userService.findUserByName(userName);
+                    user.setLastIp(request.getLocalAddr());
+                    user.setLastVisit(new Date());
+                    // System.out.println("匹配成功");
+                    userService.loginSuccess(user);
+                    request.getSession().setAttribute("user", user);
+                    System.out.println("完成方法");
+
+                    return new ModelAndView("welcome");
+                }
+
+            }
         }
 
     }

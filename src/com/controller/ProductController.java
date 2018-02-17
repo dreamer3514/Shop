@@ -3,8 +3,10 @@ package com.controller;
 import com.model.Product;
 import com.service.ProductService;
 import com.utils.Page;
+import org.apache.commons.collections4.bag.SynchronizedSortedBag;
 import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -85,11 +87,20 @@ public class ProductController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/addNewProduct")
-    public void addNewProduct(Product product,HttpServletRequest request)
+    @RequestMapping(value = "/addNewProduct.html")
+    public ModelAndView addNewProduct(Product product,HttpServletRequest request)
     {
+        System.out.println(product.getProductName());
+        System.out.println(product.getPrice());
         product.setDate(new Date());
         productService.addNewProduct(product);
+        return new ModelAndView("manage");
+    }
+
+    @RequestMapping(value="/toAddNewProduct.html")
+    public ModelAndView toManage()
+    {
+        return new ModelAndView("publishProduct");
     }
 
     @RequestMapping(value = "/delete.html")

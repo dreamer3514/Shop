@@ -33,7 +33,7 @@ public class ProductDao {
 
     public void intset(Product product)
     {
-        String sql = "INSERT INTO t_products(product_name,price,description,img_url,type_id,superType_id,date) " +
+        String sql = "INSERT INTO t_products(product_name,price,description,image_url,type_id,superType_id,date) " +
                 " VALUES (?,?,?,?,?,?,?)";
         jdbcTemplate.update(sql,new Object[]{product.getProductName(),product.getPrice(),
                 product.getDescription(),product.getImageUrl(),product.getTypeId(),product.getSuperTypeId(),new Date()});
@@ -41,7 +41,7 @@ public class ProductDao {
 
     public void upDate(Product product)
     {
-        String sql = "UPDATE t_products SET product_name=?,price=?,description=?,img_url=?,type_id=?,superType_id=?,date=? " +
+        String sql = "UPDATE t_products SET product_name=?,price=?,description=?,image_url=?,type_id=?,superType_id=?,date=? " +
                 "WHERE product_id=?";
         jdbcTemplate.update(sql,new Object[]{product.getProductName(),product.getPrice(),
                 product.getDescription(),product.getImageUrl(),product.getTypeId(),product.getSuperTypeId(),new Date(),product.getProductId()});

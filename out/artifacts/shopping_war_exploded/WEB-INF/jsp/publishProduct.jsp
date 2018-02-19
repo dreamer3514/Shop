@@ -30,7 +30,7 @@
 
         <div class="input-group">
             商品描述：
-            <input type="text" name="description"><br>
+            <input type="text" name="description">
         </div>
         <br>
         <br>

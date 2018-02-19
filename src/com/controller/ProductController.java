@@ -3,6 +3,7 @@ package com.controller;
 import com.model.Product;
 import com.service.ProductService;
 import com.utils.Page;
+import net.sf.json.JSONObject;
 import org.apache.commons.collections4.bag.SynchronizedSortedBag;
 import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
+import net.sf.json.JSONArray;
 
 @Controller
 public class ProductController {
@@ -40,6 +42,7 @@ public class ProductController {
         }
         Page<Product> page = productService.getAll(pageNum);
 
+
 //        List<Product> pList = productService.getAll();
 //        System.out.println(pList);
 //        for(Product product:pList)
@@ -61,7 +64,9 @@ public class ProductController {
         System.out.println("p: "+p);
 
         Page<Product> page= productService.getProductsByTypeId(typeId,p);
-
+//        JSONArray jsonArray = JSONArray.fromObject(page.getList());
+//
+//        System.out.println(jsonArray.toString());
         ModelAndView modelAndView = new ModelAndView("productList");
         modelAndView.addObject("page",page);
         modelAndView.addObject("typeId",typeId);

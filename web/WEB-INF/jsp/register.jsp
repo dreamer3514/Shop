@@ -33,9 +33,9 @@
 
 
                      <ul>
-                         <li><i>&#xe681;</i><input type="text" name="userName" value="" placeholder="请输入用户名" /></li>
-                         <li><i>&#xe680;</i><input type="text" name="password" value="" placeholder="请输入密码" /></li>
-                         <li><i>&#xe680;</i><input type="text" name="emailAdress" value="" placeholder="请输入邮箱"/></li>
+                         <li><input type="text" name="userName" value="" placeholder="请输入用户名" /></li>
+                         <li><input type="text" name="password" value="" placeholder="请输入密码" /></li>
+                         <li><input type="text" name="emailAdress" value="" placeholder="请输入邮箱"/></li>
                      </ul>
                      ${error}
                        <input id="reg_btn" type="submit" value="注册"/>

@@ -34,26 +34,6 @@
 //    }
 </script>
 
-
-<%--<table border="1">--%>
-    <%--<tr>--%>
-        <%--<th></th>--%>
-        <%--<th>名称</th>--%>
-        <%--<th>价格</th>--%>
-        <%--<th>详情</th>--%>
-    <%--</tr>--%>
-    <%--<c:forEach items="${page.list}" var="product">--%>
-        <%--<tr>--%>
-            <%--<td><img height="220" width="220" src="${product.imageUrl}"></td>--%>
-            <%--<td>${product.productName}</td>--%>
-            <%--<td>${product.price}</td>--%>
-            <%--<td>${product.description}</td>--%>
-            <%--<td><button class="add" onclick="addToCart(${product.productId},${user.userId})">加入</button></td>--%>
-        <%--</tr>--%>
-
-    <%--</c:forEach>--%>
-<%--</table>--%>
-
 <c:forEach items="${page.list}" var="product">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <!-- .pro-text -->
@@ -84,3 +64,12 @@
 </ul>
 </body>
 </html>
+<style>
+    .add-btn:hover{
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    .add-btn:active{
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+</style>

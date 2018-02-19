@@ -81,10 +81,10 @@ public class ProductService {
     public Page<Product> getProductsByTypeId(int typeId,int page)
     {
         List<Product> list= productDao.getProductsByTypeId(typeId);
-        for (Product p:list
-             ) {
-            System.out.println(p.getProductName());
-        }
+//        for (Product p:list
+//             ) {
+//            System.out.println(p.getProductName());
+//        }
         return setPage(list,page);
     }
     public Page<Product> getProductsBySuperTypeId(int superTypeId,int page)

@@ -26,12 +26,6 @@
         xhr.send('pid='+pid+'&'+'uid='+uid);
     }
 
-//    function productType(typeId,page) {
-//    var xhr = new XMLHttpRequest();
-//    xhr.open('POST',"/productType.html",true);
-//    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-//    xhr.send('typeId='+typeId+'&'+'page='+page);
-//    }
 </script>
 
 <c:forEach items="${page.list}" var="product">

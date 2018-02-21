@@ -102,22 +102,36 @@ public class ProductController {
         return new ModelAndView("manage");
     }
 
-    @RequestMapping(value="/toAddNewProduct.html")
-    public ModelAndView toManage()
+    @RequestMapping(value = "/deleteProduct.html")
+    public ModelAndView deleteProduct()
+    {
+        String pid = request.getParameter("pid");
+        System.out.println(pid);
+        productService.delete(Integer.valueOf(pid));
+        return new ModelAndView("deleteProduct");
+    }
+
+
+
+    @RequestMapping(value="/toPublishProduct.html")
+    public ModelAndView toPublishProduct()
     {
         return new ModelAndView("publishProduct");
     }
 
-    @RequestMapping(value = "/delete.html")
-    public void  delete(int productId)
+    @RequestMapping(value = "/toDeleteProduct.html")
+    public ModelAndView toDeleteProduct()
     {
-        productService.delete(productId);
+        int p = Integer.valueOf(request.getParameter("page"));
+        Page<Product> page = productService.getAll(p);
+        ModelAndView modelAndView = new ModelAndView("deleteProduct");
+        modelAndView.addObject("page",page);
+        return  modelAndView;
     }
-
-    @RequestMapping(value = "/update.html")
-    public void update(Product product)
+    @RequestMapping(value = "/toUpdateProduct.html")
+    public ModelAndView toUpdateProduct()
     {
-        productService.update(product);
+        return new ModelAndView("updateProduct");
     }
 
 }

@@ -13,7 +13,7 @@ public class ProductService {
 
     private ProductDao productDao;
     private final String defaultOrder="date";
-    private final int limit=5;
+    private final int limit=8;
 
     @Autowired
     public void setProductDao(ProductDao productDao)

@@ -65,7 +65,7 @@
     <div class="hd-bottom">
         <div class="cg">
             <div class="hd-bottom-category am-hide-md-down">
-                <h1><a href="javascript:;">商品分类</a><i data-am-collapse="{target: '.banner-collapse'}">&#xe78f;</i></h1>
+                <h1><a href="javascript:;">商品分类</a></h1>
             </div>
             <div class="hd-bottom-nav" id="my-modal">
                 <h1 class="am-show-md-down"><input type="text" name="name" value="" placeholder="请输入关键字" /><em class="font">&#xe6e7;</em><i data-am-modal="{target: '#my-modal'}">&#xe607;</i></h1>

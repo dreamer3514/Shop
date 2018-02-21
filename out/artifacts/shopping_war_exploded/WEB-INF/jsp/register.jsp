@@ -50,20 +50,6 @@
              </div>
          </div>
      </div>
-
-     <%--<script>--%>
-         <%--function register()--%>
-         <%--{--%>
-             <%--userName=$("#username").val()--%>
-             <%--password=$("#password").val()--%>
-             <%--email = $("#email").val()--%>
-             <%--var xhr = new XMLHttpRequest();--%>
-             <%--xhr.open('POST',"/loginCheck.html",true);--%>
-             <%--xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');--%>
-             <%--xhr.send('userName='+userName+'&'+'password='+password&'email='+email);--%>
-         <%--}--%>
-     <%--</script>--%>
-
 </body>
 </html>
 

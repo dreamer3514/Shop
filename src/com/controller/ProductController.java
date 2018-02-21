@@ -111,6 +111,14 @@ public class ProductController {
         return new ModelAndView("deleteProduct");
     }
 
+    @RequestMapping(value = "/updateProduct.html")
+    public ModelAndView updateProduct(Product product,HttpServletRequest request)
+    {
+        product.setDate(new Date());
+        productService.update(product);
+        return new ModelAndView("updateProduct");
+    }
+
 
 
     @RequestMapping(value="/toPublishProduct.html")
@@ -128,10 +136,15 @@ public class ProductController {
         modelAndView.addObject("page",page);
         return  modelAndView;
     }
+
     @RequestMapping(value = "/toUpdateProduct.html")
     public ModelAndView toUpdateProduct()
     {
-        return new ModelAndView("updateProduct");
+        int p = Integer.valueOf(request.getParameter("page"));
+        Page<Product> page = productService.getAll(p);
+        ModelAndView modelAndView = new ModelAndView("updateProduct");
+        modelAndView.addObject("page",page);
+        return  modelAndView;
     }
 
 }

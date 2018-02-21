@@ -10,12 +10,14 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <script type="text/javascript" src="lib/jquery/jquery.js"></script>
 <script>
-    function deleteProduct(pid)
+    function deleteProduct(pid,node)
     {
         var xhr = new XMLHttpRequest();
         xhr.open('POST',"/deleteProduct.html",true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send('pid='+pid);
+        node.parentNode.removeChild(node);
+
     }
 </script>
 
@@ -24,7 +26,7 @@
     <title>删除商品</title>
 </head>
 <body>
-<table class="table table-striped">
+<table class="table table-striped" id="productList">
     <caption>所有商品</caption>
     <thead>
     <tr>
@@ -40,7 +42,7 @@
             <td>${product.productName}</td>
             <td>${product.description}</td>
             <td>￥${product.price}</td>
-            <td><button type="button" class="btn btn-danger" onclick="deleteProduct(${product.productId})">删除商品</button></td>
+            <td><button type="button" class="btn btn-danger" onclick="deleteProduct(${product.productId},this.parentNode.parentNode)">删除商品</button></td>
         </tr>
     </c:forEach>
 

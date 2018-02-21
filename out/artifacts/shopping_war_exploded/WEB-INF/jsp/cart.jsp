@@ -18,11 +18,12 @@
     <title>购物车</title>
 </head>
 <script>
-    function delTFromCart(pid,uid) {
+    function delTFromCart(pid,uid,node) {
         var xhr = new XMLHttpRequest();
         xhr.open('POST',"/delFromCart.html",true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send('pid='+pid+'&'+'uid='+uid);
+        node.parentNode.removeChild(node);
     }
 </script>
 
@@ -30,23 +31,7 @@
 
     <h2>${user.userName}的购物车</h2>
     <br>
-    <%--<table border="1">--%>
-        <%--<tr>--%>
-            <%--<th>productID</th>--%>
-            <%--<th>productName</th>--%>
-            <%--<th>price</th>--%>
-            <%--<th>count</th>--%>
-        <%--</tr>--%>
-        <%--<c:forEach items="${list}" var="cartItem">--%>
-        <%--<tr>--%>
-            <%--<td>${cartItem.product.productId}</td>--%>
-            <%--<td>${cartItem.product.productName}</td>--%>
-            <%--<td>${cartItem.product.price}</td>--%>
-            <%--<td>${cartItem.count}</td>--%>
-            <%--<td><button class="del" onclick="delTFromCart(${cartItem.productId},${user.userId})">删除</button></td>--%>
-        <%--</tr>--%>
-        <%--</c:forEach>--%>
-    <%--</table>--%>
+
     <table>
         <tbody><tr>
             <th></th>
@@ -59,13 +44,13 @@
         </tr>
         <c:forEach items="${list}" var="cartItem">
             <tr>
-            <td><img src="${cartItem.product.imageUrl}" alt="13"></td>
-            <td>${cartItem.product.productName}</td>
-            <td>${cartItem.product.description}</td>
-            <td><strong>￥${cartItem.product.price}</strong></td>
-            <td>数量：${cartItem.count}</td>
-            <td><strong>￥${cartItem.total}</strong></td>
-            <td><button class="del-btn" onclick="delTFromCart(${cartItem.productId},${user.userId})">删除</button></td>
+                <td><img src="${cartItem.product.imageUrl}" alt="13"></td>
+                <td>${cartItem.product.productName}</td>
+                <td>${cartItem.product.description}</td>
+                <td><strong>￥${cartItem.product.price}</strong></td>
+                <td>数量：${cartItem.count}</td>
+                <td><strong>￥${cartItem.total}</strong></td>
+                <td><button class="del-btn" onclick="delTFromCart(${cartItem.productId},${user.userId},this.parentNode.parentNode)">删除</button></td>
             </tr>
         </c:forEach>
         </tbody></table>

@@ -30,14 +30,9 @@
                  <div class="user-div">
                      <h1>用户登录</h1>
                      <form action="/loginCheck.html" method="post">
-
-
                         <ul>
-
-                         <li><input type="text" name="userName" value="" placeholder="请输入用户名" /></li>
-                         <li><input type="text" name="password" value="" placeholder="请输入密码" /></li>
-
-
+                            <li><input type="text" name="userName" value="" placeholder="请输入用户名" /></li>
+                            <li><input type="text" name="password" value="" placeholder="请输入密码" /></li>
                          </ul>
                         ${error}
                         <%--<span><a href="#">忘记密码</a></span>--%>

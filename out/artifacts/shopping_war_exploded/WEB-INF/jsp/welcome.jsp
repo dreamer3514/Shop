@@ -93,7 +93,6 @@
                 <li><a href="/productType.html?typeId=6&page=1">手表</a></li>
                 <li><a href="/productType.html?typeId=7&page=1">箱包</a></li>
                 <li><a href="/productType.html?typeId=8&page=1">母婴</a></li>
-
             </ul>
         </div>
     </div>

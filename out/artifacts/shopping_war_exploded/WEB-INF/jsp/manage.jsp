@@ -16,7 +16,7 @@
     <li class="active">
     <li><a href="/toPublishProduct.html">添加新商品</a></li>
     <li><a href="/toDeleteProduct.html?page=1">删除商品</a></li>
-    <li><a href="#">VB.Net</a></li>
+    <li><a href="/toUpdateProduct.html?page=1">修改商品</a></li>
     <li><a href="#">Java</a></li>
     <li><a href="#">PHP</a></li>
 </ul>
